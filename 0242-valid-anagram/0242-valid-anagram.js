@@ -1,0 +1,37 @@
+const lettersCount = function(word) {
+    return word
+        .split('')
+        .reduce((res, letter) => {
+            if (!res[letter]) {
+                res[letter] = 0;
+            }
+
+            res[letter]++;
+
+            return res;
+        }, {});
+};
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+const isAnagram = function(s, t) {
+    const sSize = s.length; 
+    const tSize = t.length; 
+    
+    if (sSize !== tSize) {
+        return false;
+    }
+    
+    const sLetters = lettersCount(s);
+    const tLetters = lettersCount(t);
+    
+    const allLettersEqual = Object.keys(sLetters)
+        .every((letter) => {
+            return sLetters[letter] === tLetters[letter];
+        });
+    
+    return allLettersEqual;
+};
