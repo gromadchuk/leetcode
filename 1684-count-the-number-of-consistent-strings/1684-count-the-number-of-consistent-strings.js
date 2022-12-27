@@ -3,7 +3,7 @@
  * @param {string[]} words
  * @return {number}
  */
-var countConsistentStrings = function(allowed, words) {
+const countConsistentStrings = (allowed, words) => {
     allowed = allowed.split('');
     
     const filtered = words.filter((word) => {
