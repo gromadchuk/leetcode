@@ -3,7 +3,7 @@
  * @param {character} ch
  * @return {string}
  */
-var reversePrefix = function(word, ch) {
+const reversePrefix = (word, ch) => {
     const prefix = word.indexOf(ch);
     
     if (prefix === -1 || prefix === 0) {
