@@ -9,30 +9,18 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
-    if (!head) {
-        return head;
-    }
+const reverseList = function(head) {
+    const tempInts = [];
 
-    let tempInts = [];
-    let tempHead = head;
-
-    while (tempHead) {
-        tempInts.push(tempHead.val);
-        tempHead = tempHead.next;
+    while (head) {
+        tempInts.push(head.val);
+        head = head.next;
     }
 
     let result = null;
 
     for (let i = 0; i < tempInts.length; i++) {
-        if (i === 0) {
-            result = new ListNode(tempInts[i]);
-        } else {
-            const currentResult = result;
-            
-            result = new ListNode(tempInts[i]);
-            result.next = currentResult;
-        }
+        result = new ListNode(tempInts[i], result);
     }
 
     return result;
