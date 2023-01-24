@@ -3,12 +3,16 @@
  * @return {number}
  */
 const singleNumber = function(nums) {
-    for (let i = 0; i < nums.length; i++) {
-        const firstIndex = nums.indexOf(nums[i]);
-        const lastIndex = nums.lastIndexOf(nums[i]);
+    while (nums.length > 1) {
+        const lastIndex = nums.lastIndexOf(nums[0]);
         
-        if (firstIndex === lastIndex) {
-            return nums[i];
+        if (lastIndex === 0) {
+            return nums[0];
         }
+        
+        nums.splice(lastIndex, 1);
+        nums.splice(0, 1);
     }
+    
+    return nums[0];
 };
