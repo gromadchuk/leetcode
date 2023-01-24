@@ -30,14 +30,7 @@ const mergeKLists = (lists) => {
     let result = null;
 
     for (let i = 0; i < tempInts.length; i++) {
-        if (i === 0) {
-            result = new ListNode(tempInts[i]);
-        } else {
-            const currentResult = result;
-            
-            result = new ListNode(tempInts[i]);
-            result.next = currentResult;
-        }
+        result = new ListNode(tempInts[i], result);
     }
 
     return result;
