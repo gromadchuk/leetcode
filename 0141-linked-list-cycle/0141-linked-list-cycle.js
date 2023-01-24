@@ -10,7 +10,7 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var hasCycle = function(head) {
+const hasCycle = function(head) {
     while (head) {
         if (head.linked) {
             return true;
