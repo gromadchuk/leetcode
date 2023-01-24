@@ -54,11 +54,7 @@ const addTwoNumbers = function(l1, l2) {
     let result = null;
     
     for (let i = 0; i < sumList.length; i++) {
-        if (i === 0) {
-            result = new ListNode(+sumList[i]);
-        } else {
-            result = new ListNode(+sumList[i], result);
-        }
+        result = new ListNode(+sumList[i], result);
     }
     
     return result;
