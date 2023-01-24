@@ -3,11 +3,12 @@
  * @return {number}
  */
 const singleNumber = function(nums) {
-    for (let num of nums) {
-        const find = nums.filter(itNum => itNum === num);
-
-        if (find.length === 1) {
-            return num;
+    for (let i = 0; i < nums.length; i++) {
+        const firstIndex = nums.indexOf(nums[i]);
+        const lastIndex = nums.lastIndexOf(nums[i]);
+        
+        if (firstIndex === lastIndex) {
+            return nums[i];
         }
     }
 };
