@@ -27,11 +27,6 @@ const isAnagram = function(s, t) {
     
     const sLetters = lettersCount(s);
     const tLetters = lettersCount(t);
-    
-    const allLettersEqual = Object.keys(sLetters)
-        .every((letter) => {
-            return sLetters[letter] === tLetters[letter];
-        });
-    
-    return allLettersEqual;
+
+    return Object.keys(sLetters).every((letter) => sLetters[letter] === tLetters[letter]);
 };
