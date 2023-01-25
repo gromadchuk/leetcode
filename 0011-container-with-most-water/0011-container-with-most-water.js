@@ -2,7 +2,7 @@
  * @param {number[]} height
  * @return {number}
  */
-var maxArea = function(height) {
+const maxArea = function(height) {
     if (height.length === 2) {
         return Math.min(...height);
     }
