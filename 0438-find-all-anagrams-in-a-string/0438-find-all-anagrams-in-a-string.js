@@ -28,7 +28,9 @@ const findAnagrams = function(s, p) {
     }
     
     for (let i = 0; i <= (s.length - p.length); i++) {
-        if (checkAnagram(s.slice(i, i + p.length), anagramLetters)) {
+        if (p.indexOf(s.slice(i + p.length - 1, i + p.length)) === -1) {
+            i = i + p.length - 1;
+        } else if (checkAnagram(s.slice(i, i + p.length), anagramLetters)) {
             result.push(i);
         }
     }
