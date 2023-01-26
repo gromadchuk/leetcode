@@ -13,6 +13,8 @@ const getDeepInfo = (node) => {
 
             if (node.right) {
                 result.push(...getDeepInfo(node.right));
+            } else {
+                result.push(null);
             }
         }
     }
