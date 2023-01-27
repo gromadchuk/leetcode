@@ -7,12 +7,11 @@
  */
 
 const getNumber = (node) => {
-    let tempInts = [];
-    let tempHead = node;
+    const tempInts = [];
     
-    while (tempHead) {
-        tempInts.unshift(tempHead.val);
-        tempHead = tempHead.next;
+    while (node) {
+        tempInts.unshift(node.val);
+        node = node.next;
     }
     
     return tempInts.reverse();
